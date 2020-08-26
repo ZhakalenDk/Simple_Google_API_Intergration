@@ -10,7 +10,8 @@ namespace ZhakalenDk.Web.SGAI.Tests.Auth
     public class AuthenticationTests
     {
         Authenticator auth = new Authenticator("credentials.json", "Unit Test Application");
-        string tokenPath = "Tokens";
+        string tokenFolder = "Tokens";
+        string tokenName = "Google.Apis.Auth.OAuth2.Responses.TokenResponse-user";
 
         [TestMethod]
         public void AuthAndStore ()
@@ -20,21 +21,21 @@ namespace ZhakalenDk.Web.SGAI.Tests.Auth
                 Assert.Fail("Authenticator was null");
             }
 
-            Assert.IsTrue(auth.AuthAndStoreToken(tokenPath));
+            Assert.IsTrue(auth.AuthAndStoreToken(tokenFolder), $"Used [{auth.SecretFileName}] and tried to store Token in folder [{tokenFolder}]");
         }
 
         [TestMethod]
         public void DeleteResponseTokens ()
         {
-            if ( auth == null || !auth.AuthAndStoreToken(tokenPath) )
+            string fullPath = $"{ Assembly.GetExecutingAssembly().Location }/{ tokenFolder}";
+            if ( auth == null || !auth.AuthAndStoreToken(tokenFolder) )
             {
                 Assert.Fail("Authenticator was null");
             }
 
             auth.EraseTokens();
 
-            Assert.IsFalse(File.Exists($"{Assembly.GetExecutingAssembly().Location}/{tokenPath}/Google.Apis.Auth.OAuth2.Responses.TokenResponse-user"));
-
+            Assert.IsFalse(File.Exists($"{fullPath}/{tokenName}"), $"File didn't exist at [{fullPath}]");
         }
 
     }

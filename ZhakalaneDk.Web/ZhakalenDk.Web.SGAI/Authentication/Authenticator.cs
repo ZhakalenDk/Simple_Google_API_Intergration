@@ -47,7 +47,7 @@ namespace ZhakalenDk.Web.SGAI.Authentication
         /// <summary>
         /// The path to where the Google Response token was stored
         /// </summary>
-        public string TokenPath { get; private set; }
+        public string TokenFolder { get; private set; }
 
         protected bool InitiateService ()
         {
@@ -87,17 +87,17 @@ namespace ZhakalenDk.Web.SGAI.Authentication
                     new FileDataStore(_storeAt, true)).Result;
             }
 
-            TokenPath = _storeAt;
+            TokenFolder = _storeAt;
 
             return InitiateService();
         }
 
         /// <summary>
-        /// Clears the subfolder specified by the <see cref="TokenPath"/> where the Google Response Token was stored
+        /// Clears the subfolder specified by the <see cref="TokenFolder"/> where the Google Response Token was stored
         /// </summary>
         public void EraseTokens ()
         {
-            new FileDataStore(TokenPath, true).ClearAsync();
+            new FileDataStore(TokenFolder, true).ClearAsync();
         }
 
         /// <summary>
