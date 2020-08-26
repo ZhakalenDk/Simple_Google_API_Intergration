@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhakalenDk.Web.SGAI", "ZhakalenDk.Web.SGAI\ZhakalenDk.Web.SGAI.csproj", "{E048F1C1-6A18-4240-A876-0989050874C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthTestConsole", "AuthTestConsole\AuthTestConsole.csproj", "{41311088-368A-4DB5-89E8-E7615C6A6B81}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhakalenDk.Web.SGAI.Tests", "ZhakalenDk.Web.SGAI.Tests\ZhakalenDk.Web.SGAI.Tests.csproj", "{A9BEF42F-F756-427B-BA16-5A4BC640A59D}"
 EndProject
 Global
