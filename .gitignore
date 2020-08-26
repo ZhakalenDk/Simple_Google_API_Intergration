@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/ZhakalaneDk.Web/ZhakalenDk.Web.SGAI.Tests/credentials.json
+/ZhakalaneDk.Web/AuthTestConsole/credentials.json

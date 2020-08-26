@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\Authenticator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpreadSheets\IMySheetEntry.cs" />
     <Compile Include="SpreadSheets\Range.cs" />
@@ -72,5 +73,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
